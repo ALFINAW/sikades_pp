@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "121279539155",
+    "project_id": "sikades-pp",
+    "storage_bucket": "sikades-pp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121279539155:android:671e7a16943897b7707126",
+        "android_client_info": {
+          "package_name": "com.example.sikades"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121279539155-b7msalpp8tv4o82h4amd0md3f829hqbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPwtEuGPHPCJLP-rr1Lk9_cqaM3Vr34To"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "121279539155-b7msalpp8tv4o82h4amd0md3f829hqbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
