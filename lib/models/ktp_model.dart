@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class User {
+class KTP {
   String userid;
   String dataid;
   String nama;
@@ -10,7 +10,7 @@ class User {
   String imagettd;
   DateTime createdAt;
 
-  User({
+  KTP({
     required this.userid,
     required this.dataid,
     required this.nama,
@@ -21,10 +21,10 @@ class User {
     required this.createdAt,
   });
 
-  static User fromSnapshot(DocumentSnapshot snap) {
+  static KTP fromSnapshot(DocumentSnapshot snap) {
     var snapshot = snap.data() as Map<String, dynamic>;
 
-    return User(
+    return KTP(
       userid: snapshot['userid'],
       dataid: snapshot['dataid'],
       nama: snapshot['nama'],

@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
             .then((DocumentSnapshot snap) {
           if (snap.exists) {
             if (snap.get('role') == 'admin') {
-              Get.off(() => const DashboardAdmin());
+              Get.off(() => const DahsboardAdmin());
             } else if (snap.get('role') == 'user') {
               Get.off(() => const DashboardUser());
             }
