@@ -38,7 +38,7 @@ class KTP {
 
   Map<String, dynamic> toJson() => {
         "userid": userid,
-        "data": dataid,
+        "dataid": dataid,
         "nama": nama,
         "umur": umur,
         "imageFace": imageFace,

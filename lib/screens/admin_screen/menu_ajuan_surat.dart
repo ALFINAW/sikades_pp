@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sikades/screens/admin_screen/list_data_ajuan/data_ktp.dart';
 import 'package:sikades/screens/auth/login_screen.dart';
 
 class MenuAjuanSUrat extends StatefulWidget {
@@ -55,7 +56,7 @@ class _MenuAjuanSUratState extends State<MenuAjuanSUrat>
       body: TabBarView(
         controller: controller,
         children: [
-          Text('ktp'),
+          DataKtp(),
           Text('kk'),
         ],
       ),
