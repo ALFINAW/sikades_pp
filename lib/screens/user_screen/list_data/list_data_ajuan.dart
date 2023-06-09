@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sikades/screens/auth/login_screen.dart';
+import 'package:sikades/screens/user_screen/list_data/list_ajuan_ktp/list_ktp.dart';
 
 class ListDataAjuan extends StatefulWidget {
   const ListDataAjuan({super.key});
@@ -52,7 +53,7 @@ class _ListDataAjuanState extends State<ListDataAjuan>
       body: TabBarView(
         controller: controller,
         children: [
-          Text('ktp'),
+          const ListKtp(),
           Text('kk'),
         ],
       ),

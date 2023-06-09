@@ -21,7 +21,6 @@ class AjuanKtp extends StatefulWidget {
 
 class _AjuanKtpState extends State<AjuanKtp> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-  User? userId;
 
   TextEditingController namaCon = TextEditingController();
   TextEditingController umurCon = TextEditingController();
@@ -40,30 +39,11 @@ class _AjuanKtpState extends State<AjuanKtp> {
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  String? idUser = "";
-
-  Future<void> getData() async {
-    await firestore
-        .collection("users")
-        .doc(FirebaseAuth.instance.currentUser!.uid)
-        .get()
-        .then((snapshot) async {
-      if (snapshot.exists) {
-        setState(() {
-          idUser = snapshot.data()!['userid'];
-        });
-      }
-    });
-  }
-
   @override
   void initState() {
-    userId = FirebaseAuth.instance.currentUser;
-    namaCon.text = "";
     umurCon.text = "";
     upkkCon.text = ""; //set the initial value of text field
     super.initState();
-    getData();
   }
 
   @override
@@ -419,28 +399,6 @@ class _AjuanKtpState extends State<AjuanKtp> {
               )),
         )));
   }
-
-  // void addData(String nama, String umur, XFile image) async {
-  //   CollectionReference data = firestore.collection('data_ktp');
-
-  //   String fileName = DateTime.now().millisecondsSinceEpoch.toString();
-
-  //   Reference ref = FirebaseStorage.instance.ref().child('images_ktp');
-  //   Reference imgUpload = ref.child(fileName);
-
-  //   try {
-  //     await imgUpload.putFile(File(_img!.path));
-
-  //     imgUrl = await imgUpload.getDownloadURL();
-  //   } catch (error) {}
-
-  //   data.add({
-  //     "nama": nama,
-  //     "umur": umur,
-  //     "image": imgUrl,
-  //     "userid": userId!.uid,
-  //   });
-  // }
 
   void addKtp(String fileNameKk, String fileNameTtd, String fileNameFace,
       XFile imageFace, XFile imageTtd, XFile imageKk) async {

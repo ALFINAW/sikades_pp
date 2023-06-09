@@ -49,6 +49,7 @@ class FirestoreMethod {
           imageFace: imageFaceUrl,
           imagekk: imageKkUrl,
           imagettd: imageTtdUrl,
+          status: "",
           createdAt: DateTime.now());
       _firestore.collection('data_ktp').doc(doc.id).set(aduan.toJson());
       res = "Success";

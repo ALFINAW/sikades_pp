@@ -8,6 +8,7 @@ class KTP {
   String imageFace;
   String imagekk;
   String imagettd;
+  String status;
   DateTime createdAt;
 
   KTP({
@@ -18,6 +19,7 @@ class KTP {
     required this.imageFace,
     required this.imagekk,
     required this.imagettd,
+    required this.status,
     required this.createdAt,
   });
 
@@ -32,6 +34,7 @@ class KTP {
       imageFace: snapshot['imageFace'],
       imagekk: snapshot['imagekk'],
       imagettd: snapshot['imagettd'],
+      status: snapshot['status'],
       createdAt: snapshot['createdAt'],
     );
   }
@@ -44,6 +47,7 @@ class KTP {
         "imageFace": imageFace,
         "imagekk": imagekk,
         "imagettd": imagettd,
+        "status": status,
         "createdAt": createdAt,
       };
 }
