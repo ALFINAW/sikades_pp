@@ -39,7 +39,7 @@ class _LoginState extends State<Login> {
 
   Widget content() {
     return Container(
-      height: 525,
+      height: 550,
       child: Form(
         key: _formKey,
         child: Column(
@@ -48,7 +48,6 @@ class _LoginState extends State<Login> {
             Column(
               children: [
                 Container(
-                  padding: EdgeInsets.only(top: 20),
                   child: Text(
                     'Sistem Informasi Kependudukan Desa',
                     textAlign: TextAlign.center,
@@ -56,7 +55,6 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 20),
                   child: Text(
                     'Kelurahan Kricak',
                     textAlign: TextAlign.center,
@@ -66,7 +64,6 @@ class _LoginState extends State<Login> {
                 Container(
                     width: 120,
                     height: 180,
-                    padding: EdgeInsets.only(top: 20),
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: Image.asset(
@@ -195,7 +192,7 @@ class _LoginState extends State<Login> {
         if (documentSnapshot.get('role') == "user") {
           Get.off(const DashboardUser());
         } else {
-          Get.off(const DashboardAdmin());
+          Get.off(const DahsboardAdmin());
         }
       } else {
         print('Document does not exist on the database');

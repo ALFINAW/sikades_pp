@@ -1,5 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'package:sikades/screens/user_screen/berita/berita.dart';
+import 'package:sikades/screens/user_screen/informasi/informasi_desa.dart';
+import 'package:sikades/screens/user_screen/list_data/list_data_ajuan.dart';
+import 'package:sikades/screens/user_screen/profile/profile.dart';
+import 'package:sikades/screens/user_screen/tambah_data/menu_tambah_data.dart';
 
 // import '../../utils/colors.dart';
 
@@ -30,18 +37,10 @@ class _DashboardUserState extends State<DashboardUser> {
   }
 
   final pages = [
-    const Center(
-      child: Text('pages 1'),
-    ),
-    const Center(
-      child: Text('pages 2'),
-    ),
-    const Center(
-      child: Text('pages 3'),
-    ),
-    const Center(
-      child: Text('pages 4'),
-    ),
+    const Berita(),
+    const ListDataAjuan(),
+    const InformasiDesa(),
+    const Profile()
   ];
 
   @override
@@ -138,7 +137,7 @@ class _DashboardUserState extends State<DashboardUser> {
               size: 35,
             ),
             onPressed: () {
-              // Get.to(TambahAduan());
+              Get.to(MenuTambahData());
             }),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         body: pages.elementAt(_selected_index),

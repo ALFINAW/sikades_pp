@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:sikades/screens/admin_screen/data_users.dart';
 
-class DashboardAdmin extends StatefulWidget {
-  const DashboardAdmin({super.key});
+import 'package:sikades/screens/admin_screen/menu_ajuan_surat.dart';
+import 'package:sikades/screens/admin_screen/tambah_berita.dart';
+
+class DahsboardAdmin extends StatefulWidget {
+  const DahsboardAdmin({super.key});
 
   @override
-  State<DashboardAdmin> createState() => _DashboardAdminState();
+  State<DahsboardAdmin> createState() => _DahsboardAdminState();
 }
 
-class _DashboardAdminState extends State<DashboardAdmin> {
+class _DahsboardAdminState extends State<DahsboardAdmin> {
   int _selected_index = 0;
 
   void _updated_index(int index) {
@@ -27,14 +32,9 @@ class _DashboardAdminState extends State<DashboardAdmin> {
   }
 
   final pages = [
-    const Center(
-      child: Text('page 1'),
-    ),
-    const Center(
-      child: Text('page 2'),
-    )
+    MenuAjuanSUrat(),
+    DataUsers(),
   ];
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -42,11 +42,10 @@ class _DashboardAdminState extends State<DashboardAdmin> {
       child: Scaffold(
         extendBody: true,
         bottomNavigationBar: SafeArea(
-          minimum: EdgeInsets.only(bottom: 5),
           child: Container(
             padding: EdgeInsets.all(12),
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(25)),
+            decoration:
+                BoxDecoration(color: Color.fromARGB(255, 146, 240, 148)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -59,8 +58,9 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                       _updated_index(0);
                     },
                     icon: Icon(
-                      Icons.verified,
-                      color: _selected_index == 0 ? Colors.white : Colors.grey,
+                      Icons.home,
+                      color:
+                          _selected_index == 0 ? Colors.white : Colors.black45,
                       size: 30,
                     ),
                   ),
@@ -73,8 +73,9 @@ class _DashboardAdminState extends State<DashboardAdmin> {
                       _updated_index(1);
                     },
                     icon: Icon(
-                      Icons.history,
-                      color: _selected_index == 1 ? Colors.white : Colors.grey,
+                      Icons.person,
+                      color:
+                          _selected_index == 1 ? Colors.white : Colors.black45,
                       size: 25,
                     ),
                   ),
@@ -87,6 +88,16 @@ class _DashboardAdminState extends State<DashboardAdmin> {
           index: _selected_index,
           children: pages,
         ),
+        floatingActionButton: FloatingActionButton(
+            backgroundColor: Colors.green,
+            child: Icon(
+              Icons.add,
+              size: 35,
+            ),
+            onPressed: () {
+              Get.to(TambahBerita());
+            }),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }
