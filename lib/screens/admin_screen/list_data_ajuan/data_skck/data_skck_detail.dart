@@ -31,7 +31,7 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
         body: SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints.tightFor(
-              height: 1080,
+              height: 800,
             ),
             child: Container(
               width: MediaQuery.of(context).size.width,
@@ -139,7 +139,7 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
   void textStatus() {
     setState(() {
       statusCon.text = widget.detail['status'];
-      statusCon.text = widget.detail['catatan'];
+      catatanCon.text = widget.detail['catatan'];
     });
   }
 

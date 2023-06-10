@@ -164,7 +164,7 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
   void textStatus() {
     setState(() {
       statusCon.text = widget.detail['status'];
-      statusCon.text = widget.detail['catatan'];
+      catatanCon.text = widget.detail['catatan'];
     });
   }
 
