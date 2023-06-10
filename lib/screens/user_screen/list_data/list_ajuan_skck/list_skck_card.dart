@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-import 'package:sikades/screens/user_screen/list_data/list_ajuan_ktp/list_ktp_detail.dart';
+import 'package:sikades/screens/user_screen/list_data/list_ajuan_skck/list_skck_detail.dart';
 
-class ListKtpCard extends StatefulWidget {
+class ListSkckCard extends StatefulWidget {
   final listAllDocs;
-  const ListKtpCard({required this.listAllDocs, super.key});
+  const ListSkckCard({required this.listAllDocs, super.key});
 
   @override
-  State<ListKtpCard> createState() => _ListKtpCardState();
+  State<ListSkckCard> createState() => _ListSkckCardState();
 }
 
-class _ListKtpCardState extends State<ListKtpCard> {
+class _ListSkckCardState extends State<ListSkckCard> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -26,7 +26,7 @@ class _ListKtpCardState extends State<ListKtpCard> {
               onTap: () {
                 var detail =
                     widget.listAllDocs[index].data() as Map<String, dynamic>;
-                Get.to(ListKtpDetail(detail: detail));
+                Get.to(ListSkckDetail(detail: detail));
               },
               child: Container(
                 padding: EdgeInsets.fromLTRB(20, 10, 0, 10),

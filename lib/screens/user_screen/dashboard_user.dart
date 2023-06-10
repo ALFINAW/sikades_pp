@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -53,7 +52,7 @@ class _DashboardUserState extends State<DashboardUser> {
         bottomNavigationBar: SafeArea(
           child: Container(
             padding: EdgeInsets.all(12),
-            decoration: BoxDecoration(color: Colors.green),
+            decoration: BoxDecoration(color: Colors.blue),
             child: Row(
               children: [
                 Spacer(),

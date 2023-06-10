@@ -19,8 +19,6 @@ class _BeritaDetailState extends State<BeritaDetail> {
           title: const Text(
             'Berita',
             style: TextStyle(
-              fontSize: 25,
-              color: Color(0xFF2E4053),
               fontWeight: FontWeight.bold,
             ),
           ),

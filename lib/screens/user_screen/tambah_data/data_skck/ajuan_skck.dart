@@ -8,37 +8,34 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sikades/resources/firestore_method.dart';
 
-class AjuanKtp extends StatefulWidget {
-  const AjuanKtp({super.key});
+class AjuanSkck extends StatefulWidget {
+  const AjuanSkck({super.key});
 
   @override
-  State<AjuanKtp> createState() => _AjuanKtpState();
+  State<AjuanSkck> createState() => _AjuanSkckState();
 }
 
-class _AjuanKtpState extends State<AjuanKtp> {
+class _AjuanSkckState extends State<AjuanSkck> {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
 
   TextEditingController namaCon = TextEditingController();
-  TextEditingController umurCon = TextEditingController();
-  TextEditingController upkkCon = TextEditingController();
+
+  TextEditingController upKtpCon = TextEditingController();
   TextEditingController upPasFotoCon = TextEditingController();
-  TextEditingController upTtdCon = TextEditingController();
+
   XFile? _imgFace;
-  XFile? _imgTtd;
-  XFile? _imgKk;
+  XFile? _imgKtp;
+
   String imgUrlFace = "";
-  String imgUrlTtd = "";
-  String imgUrlKk = "";
+  String imgUrlKtp = "";
+
   String? fileNameFace;
-  String? fileNameTtd;
-  String? fileNameKk;
+  String? fileNameKtp;
 
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   @override
   void initState() {
-    umurCon.text = "";
-    upkkCon.text = ""; //set the initial value of text field
     super.initState();
   }
 
@@ -47,19 +44,19 @@ class _AjuanKtpState extends State<AjuanKtp> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Permintaan Surat Pengantar KTP'),
+        title: Text('Permintaan Surat Pengantar SKCK'),
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
         child: Center(
             child: Column(
-          children: [formajuanktp()],
+          children: [formajuanSkck()],
         )),
       ),
     );
   }
 
-  Widget formajuanktp() {
+  Widget formajuanSkck() {
     return Container(
         height: 630,
         width: double.infinity,
@@ -97,33 +94,6 @@ class _AjuanKtpState extends State<AjuanKtp> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.all(10),
-                    padding: EdgeInsets.only(top: 10),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          child: TextFormField(
-                            controller: umurCon,
-                            decoration: InputDecoration(
-                              hintText: 'masukan umur anda',
-                              labelText: 'Umur',
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(5)),
-                              contentPadding: EdgeInsets.all(15),
-                            ),
-                            validator: (value) {
-                              if (value!.isNotEmpty) {
-                                return null;
-                              } else {
-                                return "umur tidak boleh kosong";
-                              }
-                            },
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Container(
                     padding: EdgeInsets.only(left: 10),
                     child: Column(
                       children: [
@@ -133,7 +103,7 @@ class _AjuanKtpState extends State<AjuanKtp> {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            'Foto Kartu Keluarga',
+                            'Foto Kartu Tanda Penduduk',
                             style: TextStyle(fontSize: 15),
                           ),
                         ),
@@ -147,7 +117,7 @@ class _AjuanKtpState extends State<AjuanKtp> {
                         Expanded(
                             child: TextFormField(
                           readOnly: true,
-                          controller: upkkCon,
+                          controller: upKtpCon,
                           decoration: const InputDecoration(
                               filled: true,
                               fillColor: Colors.transparent,
@@ -161,7 +131,7 @@ class _AjuanKtpState extends State<AjuanKtp> {
                             if (value!.isNotEmpty) {
                               return null;
                             } else {
-                              return "upload foto KK terlebih dahulu";
+                              return "upload foto KTP terlebih dahulu";
                             }
                           },
                         )),
@@ -180,10 +150,10 @@ class _AjuanKtpState extends State<AjuanKtp> {
                                   source: ImageSource.gallery);
                               if (img != null) {
                                 setState(() {
-                                  _imgKk = img;
-                                  fileNameKk = img.name;
+                                  _imgKtp = img;
+                                  fileNameKtp = img.name;
                                 });
-                                upkkCon.text = img.name;
+                                upKtpCon.text = img.name;
                               }
                             },
                             style: ElevatedButton.styleFrom(
@@ -270,79 +240,6 @@ class _AjuanKtpState extends State<AjuanKtp> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'foto tanda tangan',
-                            style: TextStyle(fontSize: 15),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
-                      children: [
-                        Expanded(
-                            child: TextFormField(
-                          readOnly: true,
-                          controller: upTtdCon,
-                          decoration: const InputDecoration(
-                              filled: true,
-                              fillColor: Colors.transparent,
-                              border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                              ),
-                              hintText: 'upload file',
-                              contentPadding: EdgeInsets.all(15)),
-                          validator: (value) {
-                            if (value!.isNotEmpty) {
-                              return null;
-                            } else {
-                              return "upload foto tanda tangan terlebih dahulu";
-                            }
-                          },
-                        )),
-                        const SizedBox(width: 5),
-                        ElevatedButton.icon(
-                            icon: const Icon(
-                              Icons.upload_file,
-                              color: Colors.white,
-                              size: 24,
-                            ),
-                            label: const Text('Pilih File',
-                                style: TextStyle(fontSize: 16)),
-                            onPressed: () async {
-                              final ImagePicker _picker = ImagePicker();
-                              XFile? img = await _picker.pickImage(
-                                  source: ImageSource.gallery);
-                              if (img != null) {
-                                setState(() {
-                                  _imgTtd = img;
-                                  fileNameTtd = img.name;
-                                });
-                                upTtdCon.text = img.name;
-                              }
-                            },
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.grey,
-                                minimumSize: const Size(122, 48),
-                                maximumSize: const Size(122, 48),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5),
-                                )))
-                      ],
-                    ),
-                  ),
-                  Container(
                     padding: EdgeInsets.only(top: 20),
                     margin: EdgeInsets.only(right: 10),
                     child: Row(
@@ -351,9 +248,8 @@ class _AjuanKtpState extends State<AjuanKtp> {
                         ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              // addData(namaCon.text, umurCon.text, _img!);
-                              addKtp(fileNameKk!, fileNameTtd!, fileNameFace!,
-                                  _imgFace!, _imgTtd!, _imgKk!);
+                              addSkck(fileNameKtp!, fileNameFace!, _imgFace!,
+                                  _imgKtp!);
                               Get.back();
                             }
                           },
@@ -382,25 +278,22 @@ class _AjuanKtpState extends State<AjuanKtp> {
         )));
   }
 
-  void addKtp(String fileNameKk, String fileNameTtd, String fileNameFace,
-      XFile imageFace, XFile imageTtd, XFile imageKk) async {
-    Reference ref = FirebaseStorage.instance.ref().child('images_ktp');
+  void addSkck(String fileNameKtp, String fileNameFace, XFile imageFace,
+      XFile imageKtp) async {
+    Reference ref = FirebaseStorage.instance.ref().child('images_skck');
     Reference imgUploadFace = ref.child(fileNameFace);
 
-    Reference imgUploadTtd = ref.child(fileNameTtd);
-
-    Reference imgUploadKk = ref.child(fileNameKk);
+    Reference imgUploadKtp = ref.child(fileNameKtp);
 
     try {
-      await imgUploadKk.putFile(File(_imgKk!.path));
-      await imgUploadTtd.putFile(File(_imgTtd!.path));
+      await imgUploadKtp.putFile(File(_imgKtp!.path));
       await imgUploadFace.putFile(File(_imgFace!.path));
 
-      imgUrlKk = await imgUploadKk.getDownloadURL();
-      imgUrlTtd = await imgUploadTtd.getDownloadURL();
+      imgUrlKtp = await imgUploadKtp.getDownloadURL();
+
       imgUrlFace = await imgUploadFace.getDownloadURL();
-      await FirestoreMethod().tambahDataKtp(
-          namaCon.text, umurCon.text, imgUrlFace, imgUrlKk, imgUrlTtd);
+      await FirestoreMethod()
+          .tambahDataSkck(namaCon.text, imgUrlFace, imgUrlKtp);
     } catch (e) {}
   }
 }

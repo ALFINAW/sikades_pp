@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sikades/screens/auth/login_screen.dart';
@@ -44,29 +44,19 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Profil',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Container(
-        padding: const EdgeInsets.all(16.0),
-        margin: const EdgeInsets.only(top: 50, bottom: 10),
+        padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
         child: Center(
             child: Column(
-          children: [jprofil(), content()],
+          children: [content()],
         )),
-      ),
-    );
-  }
-
-  Widget jprofil() {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-          border: Border(
-              bottom: BorderSide(
-                  color: Color.fromARGB(255, 146, 240, 148), width: 2))),
-      padding: EdgeInsets.only(bottom: 10),
-      child: Text(
-        "Profil",
-        style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-        textAlign: TextAlign.center,
       ),
     );
   }

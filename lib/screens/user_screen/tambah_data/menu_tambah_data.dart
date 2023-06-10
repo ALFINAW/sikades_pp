@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:sikades/screens/user_screen/tambah_data/data_ktp/ajuan_ktp.dart';
+import 'package:sikades/screens/user_screen/tambah_data/data_skck/ajuan_skck.dart';
 
 class MenuTambahData extends StatefulWidget {
   const MenuTambahData({super.key});
@@ -14,29 +15,19 @@ class _MenuTambahDataState extends State<MenuTambahData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Pengajuan Surat',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Container(
-        padding: const EdgeInsets.all(16.0),
-        margin: const EdgeInsets.only(top: 30, bottom: 10),
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
         child: Center(
             child: Column(
-          children: [jpengajuansurat(), listpengajuansurat()],
+          children: [listpengajuansurat()],
         )),
-      ),
-    );
-  }
-
-  Widget jpengajuansurat() {
-    return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(
-          border: Border(
-              bottom: BorderSide(
-                  color: Color.fromARGB(255, 146, 240, 148), width: 2))),
-      padding: EdgeInsets.only(bottom: 10),
-      child: Text(
-        "Pengajuan Surat",
-        style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-        textAlign: TextAlign.center,
       ),
     );
   }
@@ -111,8 +102,8 @@ class _MenuTambahDataState extends State<MenuTambahData> {
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
               onTap: (() {
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: ((context) => FormAjuanSKCK())));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => AjuanSkck())));
               }),
               child: Column(children: <Widget>[
                 Image(

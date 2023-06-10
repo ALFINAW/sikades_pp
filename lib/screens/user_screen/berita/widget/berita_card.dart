@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sikades/screens/user_screen/berita/berita_detail.dart';
 
-
 class BeritaCard extends StatefulWidget {
   final listAllDocument;
   const BeritaCard({required this.listAllDocument, super.key});
@@ -28,9 +27,9 @@ class _BeritaCardState extends State<BeritaCard> {
                 Get.to(BeritaDetail(detail: detail));
               },
               child: Container(
-                padding: EdgeInsets.fromLTRB(5, 10, 0, 10),
+                padding: EdgeInsets.fromLTRB(5, 5, 0, 10),
                 width: MediaQuery.of(context).size.width,
-                height: 145,
+                height: 120,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   // ignore: prefer_const_literals_to_create_immutables

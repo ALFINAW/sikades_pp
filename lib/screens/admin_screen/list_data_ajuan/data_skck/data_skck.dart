@@ -1,20 +1,20 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:sikades/screens/admin_screen/list_data_ajuan/data_ktp_card.dart';
-import 'package:sikades/screens/admin_screen/widget/data_user_card.dart';
 
-class DataKtp extends StatefulWidget {
-  const DataKtp({super.key});
+import 'package:sikades/screens/admin_screen/list_data_ajuan/data_skck/data_skck_card.dart';
+
+class DataSkck extends StatefulWidget {
+  const DataSkck({super.key});
 
   @override
-  State<DataKtp> createState() => _DataKtpState();
+  State<DataSkck> createState() => _DataSkckState();
 }
 
-class _DataKtpState extends State<DataKtp> {
+class _DataSkckState extends State<DataSkck> {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   Stream<QuerySnapshot<Object?>> streamData() {
-    CollectionReference data = firestore.collection("data_ktp");
+    CollectionReference data = firestore.collection("data_skck");
     return data.orderBy("createdAt", descending: false).snapshots();
   }
 
@@ -36,7 +36,7 @@ class _DataKtpState extends State<DataKtp> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.active) {
             var listAllDocument = snapshot.data!.docs;
-            return DataKtpCard(
+            return DataSkckCard(
               listAllDocs: listAllDocument,
             );
           }

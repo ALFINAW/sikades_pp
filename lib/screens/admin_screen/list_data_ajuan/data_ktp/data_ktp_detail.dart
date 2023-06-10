@@ -31,7 +31,7 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
         body: SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints.tightFor(
-              height: 1200,
+              height: 1080,
             ),
             child: Container(
               width: MediaQuery.of(context).size.width,
@@ -60,8 +60,8 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
               children: [
                 Container(
                   child: Text(
-                    widget.detail['nama'],
-                    style: TextStyle(fontSize: 16),
+                    "Nama : ${widget.detail['nama']}",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                 ),
                 Container(
@@ -72,7 +72,14 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 20),
+                  child: Text(
+                    "Data Pas Foto :",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
                   width: MediaQuery.of(context).size.width,
                   height: 250,
                   decoration: BoxDecoration(
@@ -83,7 +90,14 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
                               Image.network(widget.detail['imageFace']).image)),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 20),
+                  child: Text(
+                    "Data KK :",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
                   width: MediaQuery.of(context).size.width,
                   height: 250,
                   decoration: BoxDecoration(
@@ -94,7 +108,14 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
                               Image.network(widget.detail['imagekk']).image)),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10),
+                  padding: EdgeInsets.only(top: 20),
+                  child: Text(
+                    "Data Tanda Tangan :",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.only(top: 5),
                   width: MediaQuery.of(context).size.width,
                   height: 250,
                   decoration: BoxDecoration(
@@ -104,14 +125,30 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
                           image:
                               Image.network(widget.detail['imagettd']).image)),
                 ),
-                Container(
-                  child: ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          verificationShow();
-                        });
-                      },
-                      child: Text('Verifikasi')),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.only(top: 15, right: 5),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              verificationShow();
+                            });
+                          },
+                          child: Text('Verifikasi')),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 15, left: 5),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              catatanShow();
+                            });
+                          },
+                          child: Text('Catatan')),
+                    )
+                  ],
                 )
               ],
             ),
@@ -122,17 +159,19 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
   }
 
   TextEditingController statusCon = TextEditingController();
+  TextEditingController catatanCon = TextEditingController();
 
-  void textProgress() {
+  void textStatus() {
     setState(() {
       statusCon.text = widget.detail['status'];
+      statusCon.text = widget.detail['catatan'];
     });
   }
 
   @override
   void initState() {
     super.initState();
-    textProgress();
+    textStatus();
   }
 
   void verificationShow() {
@@ -166,7 +205,49 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
             ElevatedButton(
               child: Text('Simpan'),
               onPressed: () async {
-                addData();
+                addStatus();
+
+                Get.back();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  void catatanShow() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text('catatan'),
+          content: Form(
+            // key: _formKey,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              // mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                TextFormField(
+                  controller: catatanCon,
+                  decoration: InputDecoration(
+                    labelText: 'catatan',
+                  ),
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            ElevatedButton(
+              child: Text('Batal'),
+              onPressed: () {
+                Get.back();
+              },
+            ),
+            ElevatedButton(
+              child: Text('Simpan'),
+              onPressed: () async {
+                addCatatan();
 
                 Get.back();
               },
@@ -179,12 +260,21 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
 
   // User? user = FirebaseAuth.instance.currentUser;
 
-  Future<void> addData() async {
+  Future<void> addStatus() async {
     await FirebaseFirestore.instance
         .collection('data_ktp')
         .doc(widget.detail['dataid'])
         .update({
       "status": statusCon.text,
+    });
+  }
+
+  Future<void> addCatatan() async {
+    await FirebaseFirestore.instance
+        .collection('data_ktp')
+        .doc(widget.detail['dataid'])
+        .update({
+      "catatan": catatanCon.text,
     });
   }
 }

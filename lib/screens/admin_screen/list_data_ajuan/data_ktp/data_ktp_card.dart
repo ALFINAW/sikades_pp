@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:sikades/screens/admin_screen/list_data_ajuan/data_ktp/data_ktp_detail.dart';
 
-import 'package:sikades/screens/user_screen/list_data/list_ajuan_ktp/list_ktp_detail.dart';
-
-class ListKtpCard extends StatefulWidget {
+class DataKtpCard extends StatefulWidget {
   final listAllDocs;
-  const ListKtpCard({required this.listAllDocs, super.key});
+  const DataKtpCard({required this.listAllDocs, super.key});
 
   @override
-  State<ListKtpCard> createState() => _ListKtpCardState();
+  State<DataKtpCard> createState() => _DataKtpCardState();
 }
 
-class _ListKtpCardState extends State<ListKtpCard> {
+class _DataKtpCardState extends State<DataKtpCard> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -26,12 +25,12 @@ class _ListKtpCardState extends State<ListKtpCard> {
               onTap: () {
                 var detail =
                     widget.listAllDocs[index].data() as Map<String, dynamic>;
-                Get.to(ListKtpDetail(detail: detail));
+                Get.to(DataKtpDetail(detail: detail));
               },
               child: Container(
                 padding: EdgeInsets.fromLTRB(20, 10, 0, 10),
                 width: MediaQuery.of(context).size.width,
-                height: 120,
+                height: 130,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   // ignore: prefer_const_literals_to_create_immutables
@@ -63,6 +62,16 @@ class _ListKtpCardState extends State<ListKtpCard> {
                             maxLines: 1,
                           ),
                         ),
+                        // Container(
+                        //   width: 230,
+                        //   child: Text(
+                        //     "${(widget.listAllDocs[index].data() as Map<String, dynamic>)["umur"]}",
+                        //     style: TextStyle(
+                        //         fontSize: 16.0, fontFamily: 'Poppins'),
+                        //     maxLines: 2,
+                        //     overflow: TextOverflow.ellipsis,
+                        //   ),
+                        // ),
                         Container(
                           width: 230,
                           child: Text(

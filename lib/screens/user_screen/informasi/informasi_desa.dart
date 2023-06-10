@@ -11,9 +11,15 @@ class _InformasiDesaState extends State<InformasiDesa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Informasi Desa',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
-        margin: const EdgeInsets.only(top: 30, bottom: 10),
         child: Center(
             child: Column(
           children: [content()],
@@ -26,24 +32,6 @@ class _InformasiDesaState extends State<InformasiDesa> {
     return Container(
       child: Column(
         children: [
-          Column(
-            children: [
-              Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                            color: Color.fromARGB(255, 146, 240, 148),
-                            width: 2))),
-                padding: EdgeInsets.only(bottom: 10),
-                child: Text(
-                  "Informasi Desa",
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
-          ),
           Row(
             children: [
               Container(

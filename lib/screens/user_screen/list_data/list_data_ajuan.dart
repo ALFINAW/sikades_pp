@@ -1,8 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:sikades/screens/auth/login_screen.dart';
+
 import 'package:sikades/screens/user_screen/list_data/list_ajuan_ktp/list_ktp.dart';
+import 'package:sikades/screens/user_screen/list_data/list_ajuan_skck/list_skck.dart';
 
 class ListDataAjuan extends StatefulWidget {
   const ListDataAjuan({super.key});
@@ -31,10 +30,10 @@ class _ListDataAjuanState extends State<ListDataAjuan>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           'list data ajuan',
           style: TextStyle(
-            fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -42,10 +41,10 @@ class _ListDataAjuanState extends State<ListDataAjuan>
           controller: controller,
           tabs: [
             Tab(
-              text: 'Ktp',
+              text: 'KTP',
             ),
             Tab(
-              text: 'KK',
+              text: 'SKCK',
             ),
           ],
         ),
@@ -54,7 +53,7 @@ class _ListDataAjuanState extends State<ListDataAjuan>
         controller: controller,
         children: [
           const ListKtp(),
-          Text('kk'),
+          const ListSkck(),
         ],
       ),
     );

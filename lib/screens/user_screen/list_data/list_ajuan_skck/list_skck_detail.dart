@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class ListKtpDetail extends StatefulWidget {
+class ListSkckDetail extends StatefulWidget {
   final detail;
-
-  ListKtpDetail({this.detail, super.key});
+  // String aduanId;
+  ListSkckDetail({this.detail, super.key});
 
   @override
-  State<ListKtpDetail> createState() => _ListKtpDetailState();
+  State<ListSkckDetail> createState() => _ListSkckDetailState();
 }
 
-class _ListKtpDetailState extends State<ListKtpDetail> {
+class _ListSkckDetailState extends State<ListSkckDetail> {
   bool isCheked = false;
   // final mq = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
   @override
@@ -19,7 +19,7 @@ class _ListKtpDetailState extends State<ListKtpDetail> {
         appBar: AppBar(
           elevation: 0,
           title: Text(
-            'Detail Formulir Ajuan KTP',
+            'Detail Formulir Ajuan SKCK',
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),
@@ -46,13 +46,6 @@ class _ListKtpDetailState extends State<ListKtpDetail> {
             Container(
               child: Text(
                 "Nama : ${widget.detail['nama']}",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.only(top: 15),
-              child: Text(
-                "Umur : ${widget.detail['umur']}",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
             ),

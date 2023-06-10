@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class DataUsersCard extends StatefulWidget {
   final listAllDocs;
@@ -21,8 +20,8 @@ class _DataUsersCardState extends State<DataUsersCard> {
           children: [
             InkWell(
               onTap: () {
-                var detail =
-                    widget.listAllDocs[index].data() as Map<String, dynamic>;
+                // var detail =
+                //     widget.listAllDocs[index].data() as Map<String, dynamic>;
                 // Get.to(DataUserDetail(detail: detail));
               },
               child: Container(
@@ -52,33 +51,31 @@ class _DataUsersCardState extends State<DataUsersCard> {
                         Container(
                           width: 230,
                           child: Text(
-                            "${(widget.listAllDocs[index].data() as Map<String, dynamic>)["username"]}",
-                            style: TextStyle(
-                                fontSize: 19.0,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Poppins'),
+                            "NIK : ${(widget.listAllDocs[index].data() as Map<String, dynamic>)["nik"]}",
+                            style: TextStyle(fontSize: 16.0),
                             maxLines: 1,
-                          ),
-                        ),
-                        Container(
-                          width: 230,
-                          child: Text(
-                            "${(widget.listAllDocs[index].data() as Map<String, dynamic>)["email"]}",
-                            style: TextStyle(
-                                fontSize: 16.0, fontFamily: 'Poppins'),
-                            maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         Container(
                           width: 230,
                           child: Text(
-                            "${(widget.listAllDocs[index].data() as Map<String, dynamic>)["nik"]}",
+                            "Nama : ${(widget.listAllDocs[index].data() as Map<String, dynamic>)["username"]}",
                             style: TextStyle(
-                                fontSize: 14.0,
-                                fontFamily: 'Poppins',
-                                color: Colors.black54),
+                              fontSize: 19.0,
+                              fontWeight: FontWeight.bold,
+                            ),
                             maxLines: 1,
+                          ),
+                        ),
+                        Container(
+                          width: 230,
+                          child: Text(
+                            "Email : ${(widget.listAllDocs[index].data() as Map<String, dynamic>)["email"]}",
+                            style: TextStyle(
+                              fontSize: 16.0,
+                            ),
+                            maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),

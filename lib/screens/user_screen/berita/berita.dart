@@ -22,13 +22,18 @@ class _BeritaState extends State<Berita> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'Berita',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          padding: const EdgeInsets.all(16.0),
-          margin: const EdgeInsets.only(top: 50, bottom: 10),
           child: Column(
-            children: [beritaText(), beritaView()],
+            children: [beritaView()],
           )),
     );
   }
@@ -39,16 +44,6 @@ class _BeritaState extends State<Berita> {
         width: MediaQuery.of(context).size.width,
         height: 650,
         child: content(),
-      ),
-    );
-  }
-
-  Widget beritaText() {
-    return Container(
-      padding: EdgeInsets.only(bottom: 10),
-      child: const Text(
-        "Berita",
-        style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
       ),
     );
   }
