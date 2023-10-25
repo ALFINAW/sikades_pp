@@ -39,13 +39,12 @@ class _TambahBeritaState extends State<TambahBerita> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(),
-        elevation: 2,
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Color.fromARGB(255, 166, 243, 169),
+
         title: const Text(
           'Tambah Berita',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
         // backgroundColor: "#34495E".toColor(),
       ),
@@ -61,7 +60,7 @@ class _TambahBeritaState extends State<TambahBerita> {
 
   Widget content() {
     return Container(
-        padding: EdgeInsets.only(top: 20),
+        padding: EdgeInsets.only(top: 10),
         child: PhysicalModel(
           color: Colors.white,
           elevation: 3,
@@ -99,6 +98,7 @@ class _TambahBeritaState extends State<TambahBerita> {
                         maxLines: 4,
                         decoration: InputDecoration(
                             filled: true,
+                            fillColor: Colors.white,
                             label: Text('Deskripsi',
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
@@ -136,6 +136,14 @@ class _TambahBeritaState extends State<TambahBerita> {
                         Container(
                           height: 55,
                           child: ElevatedButton.icon(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all(Colors.blueGrey),
+                                shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10)))),
                             onPressed: () async {
                               final ImagePicker _picker = ImagePicker();
                               XFile? img = await _picker.pickImage(
@@ -154,16 +162,16 @@ class _TambahBeritaState extends State<TambahBerita> {
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.bold),
                             ),
-                            // child: Text('Upload photo',
-                            //     style: TextStyle(
-                            //         fontFamily: 'Poppins',
-                            //         fontSize: 20,
-                            //         fontWeight: FontWeight.bold)),
                           ),
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 1,
+                    ),
                     Container(
+                      width: 120,
+                      height: 50,
                       child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {

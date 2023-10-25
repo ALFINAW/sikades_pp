@@ -44,7 +44,9 @@ class _AjuanSkckState extends State<AjuanSkck> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Permintaan Surat Pengantar SKCK'),
+        backgroundColor: Color.fromARGB(255, 166, 243, 169),
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Text('Permintaan SKCK', style: TextStyle(color: Colors.black)),
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
@@ -176,7 +178,7 @@ class _AjuanSkckState extends State<AjuanSkck> {
                         Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            'pas foto ',
+                            'Pas Foto 3X4 ',
                             style: TextStyle(fontSize: 15),
                           ),
                         ),
@@ -240,7 +242,7 @@ class _AjuanSkckState extends State<AjuanSkck> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 20),
+                    padding: EdgeInsets.only(top: 30),
                     margin: EdgeInsets.only(right: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -254,8 +256,8 @@ class _AjuanSkckState extends State<AjuanSkck> {
                             }
                           },
                           child: Container(
-                            width: 60,
-                            height: 40,
+                            width: 80,
+                            height: 50,
                             child: Center(
                               child: Text(
                                 'Ajukan',

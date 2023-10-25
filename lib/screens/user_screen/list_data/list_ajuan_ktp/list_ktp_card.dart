@@ -19,7 +19,7 @@ class _ListKtpCardState extends State<ListKtpCard> {
       shrinkWrap: true,
       itemCount: widget.listAllDocs.length,
       itemBuilder: (BuildContext context, int index) => Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+        padding: EdgeInsets.all(10),
         child: Column(
           children: [
             InkWell(
@@ -34,20 +34,18 @@ class _ListKtpCardState extends State<ListKtpCard> {
                 height: 120,
                 decoration: BoxDecoration(
                   color: Colors.white,
+
                   // ignore: prefer_const_literals_to_create_immutables
                   boxShadow: [
                     // ignore: prefer_const_constructors
                     BoxShadow(
                       blurRadius: 6,
                       color: Color(0x34000000),
-                      offset: Offset(0, 3),
+                      offset: Offset(1, 3),
                     )
                   ],
-                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
-
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -20,12 +20,11 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Color.fromARGB(255, 166, 243, 169),
           title: Text(
             'Detail Formulir Ajuan SKCK',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(color: Colors.black),
           ),
         ),
         body: SingleChildScrollView(
@@ -45,7 +44,6 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
 
   Widget content() {
     return PhysicalModel(
-      borderRadius: BorderRadius.circular(30),
       elevation: 3,
       color: Colors.white,
       child: Container(
@@ -61,14 +59,14 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
                 Container(
                   child: Text(
                     "Nama : ${widget.detail['nama']}",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
                 Container(
                   padding: EdgeInsets.only(top: 20),
                   child: Text(
                     "Data Pas Foto :",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
                 Container(
@@ -86,7 +84,7 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
                   padding: EdgeInsets.only(top: 20),
                   child: Text(
                     "Data KTP :",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: TextStyle(fontSize: 20),
                   ),
                 ),
                 Container(
@@ -100,10 +98,15 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
                           image:
                               Image.network(widget.detail['imagektp']).image)),
                 ),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
+                      height: 60,
+                      width: 100,
                       padding: EdgeInsets.only(top: 15, right: 5),
                       child: ElevatedButton(
                           onPressed: () {
@@ -113,7 +116,12 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
                           },
                           child: Text('Verifikasi')),
                     ),
+                    SizedBox(
+                      width: 30,
+                    ),
                     Container(
+                      height: 60,
+                      width: 100,
                       padding: EdgeInsets.only(top: 15, left: 5),
                       child: ElevatedButton(
                           onPressed: () {

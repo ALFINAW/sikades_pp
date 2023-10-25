@@ -52,7 +52,8 @@ class _DashboardUserState extends State<DashboardUser> {
         bottomNavigationBar: SafeArea(
           child: Container(
             padding: EdgeInsets.all(12),
-            decoration: BoxDecoration(color: Colors.blue),
+            decoration:
+                BoxDecoration(color: Color.fromARGB(255, 166, 243, 169)),
             child: Row(
               children: [
                 Spacer(),
@@ -67,7 +68,7 @@ class _DashboardUserState extends State<DashboardUser> {
                     icon: Icon(
                       Icons.home,
                       color:
-                          _selected_index == 0 ? Colors.white : Colors.black45,
+                          _selected_index == 0 ? Colors.blueGrey : Colors.black,
                       size: 30,
                     ),
                   ),
@@ -83,7 +84,7 @@ class _DashboardUserState extends State<DashboardUser> {
                     icon: Icon(
                       Icons.archive,
                       color:
-                          _selected_index == 1 ? Colors.white : Colors.black45,
+                          _selected_index == 1 ? Colors.blueGrey : Colors.black,
                       size: 25,
                     ),
                   ),
@@ -102,7 +103,7 @@ class _DashboardUserState extends State<DashboardUser> {
                     icon: Icon(
                       Icons.info,
                       color:
-                          _selected_index == 2 ? Colors.white : Colors.black45,
+                          _selected_index == 2 ? Colors.blueGrey : Colors.black,
                       size: 25,
                     ),
                   ),
@@ -119,7 +120,7 @@ class _DashboardUserState extends State<DashboardUser> {
                     icon: Icon(
                       Icons.person,
                       color:
-                          _selected_index == 3 ? Colors.white : Colors.black45,
+                          _selected_index == 3 ? Colors.blueGrey : Colors.black,
                       size: 30,
                     ),
                   ),
@@ -130,10 +131,11 @@ class _DashboardUserState extends State<DashboardUser> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-            // backgroundColor: "#99A3A4".toColor(),
+            backgroundColor: Color.fromARGB(255, 133, 233, 136),
             child: Icon(
               Icons.add,
               size: 35,
+              color: Colors.black,
             ),
             onPressed: () {
               Get.to(MenuTambahData());

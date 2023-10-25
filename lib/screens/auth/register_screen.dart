@@ -49,27 +49,21 @@ class _RegisterState extends State<Register> {
               Container(
                 child: Text(
                   "Register",
-                  style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                 ),
               ),
               Container(
                 child: TextFormField(
                   controller: userNameCon,
                   decoration: InputDecoration(
-                    label: Text('Nama Lengkap',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                        )),
+                    label: Text('Nama Lengkap'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "masukkan nama akun";
+                      return "Harap masukan nama";
                     } else {
                       return null;
                     }
@@ -80,17 +74,14 @@ class _RegisterState extends State<Register> {
                 child: TextFormField(
                   controller: emailCon,
                   decoration: InputDecoration(
-                    label: Text('Email',
-                        style: TextStyle(
-                          fontFamily: 'Poppins',
-                        )),
+                    label: Text('Email'),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                     ),
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return "masukkan email";
+                      return "Harap masukan email";
                     } else {
                       return null;
                     }
@@ -111,7 +102,7 @@ class _RegisterState extends State<Register> {
                   validator: (value) {
                     if (value!.isEmpty ||
                         !RegExp(r'^[0-9]{16}$').hasMatch(value)) {
-                      return "masukkan NIK yang benar";
+                      return "Harap masukan NIK dengan benar";
                     } else {
                       return null;
                     }
@@ -133,7 +124,7 @@ class _RegisterState extends State<Register> {
                 child: TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
-                      label: Text('Verifikasi Password', style: TextStyle()),
+                      label: Text('Konfirmasi Password', style: TextStyle()),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(30))),
                   validator: _requeiredConfirmValidator,
@@ -153,23 +144,24 @@ class _RegisterState extends State<Register> {
                       registerUser();
                     }
                   },
-                  child: Text('Register',
+                  child: Text('Sign Up',
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
                 ),
               ),
               Container(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Sudah punya akun? ', style: TextStyle()),
+                    Text('Sudah mempunyai akun? '),
+                    SizedBox(width: 7),
                     InkWell(
                       onTap: () {
                         Navigator.pop(context);
                       },
                       child: Text(
                         'Login',
-                        style: TextStyle(fontFamily: 'Poppins'),
+                        style: TextStyle(color: Colors.lightBlue),
                       ),
                     )
                   ],
@@ -201,7 +193,7 @@ class _RegisterState extends State<Register> {
 
   String? _requeiredConfirmValidator(String? confirmPasswordText) {
     if (confirmPasswordText == null || confirmPasswordText.trim().isEmpty) {
-      return 'Form ini dibutuhkan !';
+      return 'Harap masukan password';
     }
     if (passwordCon.text != confirmPasswordText) {
       return 'Password tidak sama';
@@ -216,16 +208,14 @@ class _RegisterState extends State<Register> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            'register',
+            'Register',
             style: TextStyle(
-              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
             ),
           ),
           content: Text(
             'Email sudah terdaftar',
             style: TextStyle(
-              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -237,7 +227,6 @@ class _RegisterState extends State<Register> {
               child: Text(
                 'OK',
                 style: TextStyle(
-                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -257,16 +246,14 @@ class _RegisterState extends State<Register> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(
-            'register',
+            'Register',
             style: TextStyle(
-              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
             ),
           ),
           content: Text(
-            'pendaftaran behasil',
+            'Pendaftaran behasil',
             style: TextStyle(
-              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -278,7 +265,6 @@ class _RegisterState extends State<Register> {
               child: Text(
                 'OK',
                 style: TextStyle(
-                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.bold,
                 ),
               ),

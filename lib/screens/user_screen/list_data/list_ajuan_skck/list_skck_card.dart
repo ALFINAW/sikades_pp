@@ -19,7 +19,7 @@ class _ListSkckCardState extends State<ListSkckCard> {
       shrinkWrap: true,
       itemCount: widget.listAllDocs.length,
       itemBuilder: (BuildContext context, int index) => Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+        padding: EdgeInsets.all(10),
         child: Column(
           children: [
             InkWell(
@@ -43,7 +43,6 @@ class _ListSkckCardState extends State<ListSkckCard> {
                       offset: Offset(0, 3),
                     )
                   ],
-                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -13,14 +13,11 @@ class _BeritaDetailState extends State<BeritaDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 1,
-          // backgroundColor: "#2E4053".toColor(),
-
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Color.fromARGB(255, 166, 243, 169),
           title: const Text(
             'Berita',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
+            style: TextStyle(color: Colors.black),
           ),
         ),
         body: content());

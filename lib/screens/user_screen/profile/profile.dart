@@ -45,10 +45,11 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 166, 243, 169),
         centerTitle: true,
         title: Text(
           'Profil',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
       ),
       body: Container(
@@ -63,14 +64,18 @@ class _ProfileState extends State<Profile> {
 
   Widget content() {
     return Container(
-      padding: EdgeInsets.all(20.0),
+      padding: EdgeInsets.only(
+        left: 10,
+        right: 10,
+        top: 20,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           PhysicalModel(
             color: Colors.white,
-            elevation: 3,
-            borderRadius: BorderRadius.circular(30),
+            elevation: 10,
+            borderRadius: BorderRadius.circular(10),
             child: Container(
               padding: EdgeInsets.all(20.0),
               width: double.infinity,
@@ -81,7 +86,7 @@ class _ProfileState extends State<Profile> {
                   Container(
                     padding: const EdgeInsets.only(top: 10, bottom: 10),
                     child: Image.asset(
-                      "assets/images/logo.png",
+                      "assets/images/lprofil.png",
                       height: 180,
                       width: 120,
                     ),
@@ -156,12 +161,15 @@ class _ProfileState extends State<Profile> {
                         ),
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
-                                Color.fromARGB(255, 99, 96, 96)),
+                                Colors.blueGrey),
                             shape: MaterialStateProperty.all<
                                     RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)))),
-                      )
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
                     ],
                   ),
                 ],

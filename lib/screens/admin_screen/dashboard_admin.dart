@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sikades/screens/admin_screen/data_users.dart';
 
-import 'package:sikades/screens/admin_screen/menu_ajuan_surat.dart';
+import 'package:sikades/screens/admin_screen/daftar_surat_ajuan_warga.dart';
 import 'package:sikades/screens/admin_screen/tambah_berita.dart';
 
 class DahsboardAdmin extends StatefulWidget {
@@ -45,7 +45,7 @@ class _DahsboardAdminState extends State<DahsboardAdmin> {
           child: Container(
             padding: EdgeInsets.all(12),
             decoration:
-                BoxDecoration(color: Color.fromARGB(255, 146, 240, 148)),
+                BoxDecoration(color: Color.fromARGB(255, 166, 243, 169)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -60,7 +60,7 @@ class _DahsboardAdminState extends State<DahsboardAdmin> {
                     icon: Icon(
                       Icons.home,
                       color:
-                          _selected_index == 0 ? Colors.white : Colors.black45,
+                          _selected_index == 0 ? Colors.blueGrey : Colors.black,
                       size: 30,
                     ),
                   ),
@@ -75,7 +75,7 @@ class _DahsboardAdminState extends State<DahsboardAdmin> {
                     icon: Icon(
                       Icons.person,
                       color:
-                          _selected_index == 1 ? Colors.white : Colors.black45,
+                          _selected_index == 1 ? Colors.blueGrey : Colors.black,
                       size: 25,
                     ),
                   ),
@@ -89,10 +89,11 @@ class _DahsboardAdminState extends State<DahsboardAdmin> {
           children: pages,
         ),
         floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.green,
+            backgroundColor: Color.fromARGB(255, 133, 233, 136),
             child: Icon(
               Icons.add,
               size: 35,
+              color: Colors.black,
             ),
             onPressed: () {
               Get.to(TambahBerita());

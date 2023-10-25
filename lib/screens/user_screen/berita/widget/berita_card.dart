@@ -17,7 +17,7 @@ class _BeritaCardState extends State<BeritaCard> {
       shrinkWrap: true,
       itemCount: widget.listAllDocument.length,
       itemBuilder: (BuildContext context, int index) => Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+        padding: EdgeInsets.all(10),
         child: Column(
           children: [
             InkWell(
@@ -38,10 +38,9 @@ class _BeritaCardState extends State<BeritaCard> {
                     BoxShadow(
                       blurRadius: 6,
                       color: Color(0x34000000),
-                      offset: Offset(0, 3),
+                      offset: Offset(3, 3),
                     )
                   ],
-                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,

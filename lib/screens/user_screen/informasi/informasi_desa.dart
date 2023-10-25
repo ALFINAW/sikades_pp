@@ -12,10 +12,11 @@ class _InformasiDesaState extends State<InformasiDesa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 166, 243, 169),
         centerTitle: true,
         title: Text(
           'Informasi Desa',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
       ),
       body: Container(

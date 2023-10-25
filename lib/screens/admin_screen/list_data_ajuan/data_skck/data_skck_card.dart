@@ -19,7 +19,7 @@ class _DataSkckCardState extends State<DataSkckCard> {
       shrinkWrap: true,
       itemCount: widget.listAllDocs.length,
       itemBuilder: (BuildContext context, int index) => Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+        padding: EdgeInsets.all(10),
         child: Column(
           children: [
             InkWell(
@@ -43,7 +43,6 @@ class _DataSkckCardState extends State<DataSkckCard> {
                       offset: Offset(0, 3),
                     )
                   ],
-                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -63,16 +62,6 @@ class _DataSkckCardState extends State<DataSkckCard> {
                             maxLines: 1,
                           ),
                         ),
-                        // Container(
-                        //   width: 230,
-                        //   child: Text(
-                        //     "${(widget.listAllDocs[index].data() as Map<String, dynamic>)["umur"]}",
-                        //     style: TextStyle(
-                        //         fontSize: 16.0, fontFamily: 'Poppins'),
-                        //     maxLines: 2,
-                        //     overflow: TextOverflow.ellipsis,
-                        //   ),
-                        // ),
                         Container(
                           width: 230,
                           child: Text(

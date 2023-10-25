@@ -15,7 +15,7 @@ class _DataUsersCardState extends State<DataUsersCard> {
       shrinkWrap: true,
       itemCount: widget.listAllDocs.length,
       itemBuilder: (BuildContext context, int index) => Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
+        padding: EdgeInsets.all(10),
         child: Column(
           children: [
             InkWell(
@@ -39,7 +39,6 @@ class _DataUsersCardState extends State<DataUsersCard> {
                       offset: Offset(0, 3),
                     )
                   ],
-                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
                   // mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -63,7 +62,6 @@ class _DataUsersCardState extends State<DataUsersCard> {
                             "Nama : ${(widget.listAllDocs[index].data() as Map<String, dynamic>)["username"]}",
                             style: TextStyle(
                               fontSize: 19.0,
-                              fontWeight: FontWeight.bold,
                             ),
                             maxLines: 1,
                           ),
