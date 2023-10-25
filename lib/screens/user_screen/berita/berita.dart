@@ -23,30 +23,31 @@ class _BeritaState extends State<Berita> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 166, 243, 169),
         centerTitle: true,
         title: Text(
           'Berita',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
       ),
-      body: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Column(
-            children: [beritaView()],
-          )),
-    );
-  }
-
-  Widget beritaView() {
-    return SingleChildScrollView(
-      child: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
-        height: 650,
+        height: MediaQuery.of(context).size.height,
         child: content(),
       ),
     );
   }
+
+  // Widget beritaView() {
+  //   return SingleChildScrollView(
+  //     child: Container(
+  //       padding: EdgeInsets.only(left: 20, right: 20, bottom: 5),
+  //       width: MediaQuery.of(context).size.width,
+  //       height: 650,
+  //       child: content(),
+  //     ),
+  //   );
+  // }
 
   Widget content() {
     return StreamBuilder<QuerySnapshot<Object?>>(

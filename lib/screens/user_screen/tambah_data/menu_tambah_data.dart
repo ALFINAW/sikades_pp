@@ -16,19 +16,17 @@ class _MenuTambahDataState extends State<MenuTambahData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 166, 243, 169),
+        iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
         title: Text(
           'Pengajuan Surat',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
       ),
-      body: Container(
-        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-        child: Center(
-            child: Column(
-          children: [listpengajuansurat()],
-        )),
-      ),
+      body: SingleChildScrollView(
+          padding: EdgeInsets.only(top: 20, left: 20, right: 20),
+          child: listpengajuansurat()),
     );
   }
 
@@ -40,7 +38,7 @@ class _MenuTambahDataState extends State<MenuTambahData> {
         crossAxisCount: 2,
         children: [
           Container(
-            margin: EdgeInsets.only(bottom: 40, right: 5),
+            margin: EdgeInsets.only(bottom: 20, right: 5),
             child: Expanded(
                 child: InkWell(
               highlightColor: Colors.transparent,
@@ -67,7 +65,7 @@ class _MenuTambahDataState extends State<MenuTambahData> {
             )),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 40, left: 5),
+            margin: EdgeInsets.only(bottom: 20, left: 5),
             child: Expanded(
                 child: InkWell(
               highlightColor: Colors.transparent,
@@ -96,7 +94,7 @@ class _MenuTambahDataState extends State<MenuTambahData> {
             )),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 30, right: 5),
+            margin: EdgeInsets.only(bottom: 20, right: 5),
             child: Expanded(
                 child: InkWell(
               highlightColor: Colors.transparent,

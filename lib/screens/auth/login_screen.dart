@@ -30,9 +30,11 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        padding: EdgeInsets.only(left: 20, right: 20),
-        child: Center(child: content()),
+      body: Center(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.only(left: 20, right: 20),
+          child: content(),
+        ),
       ),
     );
   }
@@ -51,17 +53,18 @@ class _LoginState extends State<Login> {
                   child: Text(
                     'Sistem Informasi Kependudukan Desa',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
                   child: Text(
-                    'Kelurahan Kricak',
+                    'Kelurahan Kricak, Tegalrejo, Yogyakarta',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
+                    margin: EdgeInsets.only(top: 10),
                     width: 120,
                     height: 180,
                     decoration: BoxDecoration(
@@ -77,13 +80,13 @@ class _LoginState extends State<Login> {
                   child: TextFormField(
                     controller: emailCon,
                     decoration: InputDecoration(
-                        suffixIcon: Icon(Icons.person_outline),
-                        label: Text('Email', style: TextStyle()),
+                        prefixIcon: Icon(Icons.person_outline),
+                        label: Text('Email'),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30))),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "masukkan email";
+                        return "Email harus diisi";
                       } else {
                         return null;
                       }
@@ -96,13 +99,13 @@ class _LoginState extends State<Login> {
                     obscureText: true,
                     controller: passCon,
                     decoration: InputDecoration(
-                        suffixIcon: Icon(Icons.lock),
-                        label: Text('Password', style: TextStyle()),
+                        label: Text('Password'),
+                        prefixIcon: Icon(Icons.lock),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30))),
                     validator: (value) {
                       if (value!.isEmpty) {
-                        return "masukkan password";
+                        return "Password harus diisi";
                       } else {
                         return null;
                       }
@@ -125,17 +128,18 @@ class _LoginState extends State<Login> {
                         loginUser();
                       }
                     },
-                    child: Text('Login',
+                    child: Text('Sign In',
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold)),
+                            fontSize: 17, fontWeight: FontWeight.bold)),
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(top: 15),
+                  padding: EdgeInsets.only(top: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Belum punya akun? ', style: TextStyle()),
+                      Text('Belum mempunya akun?'),
+                      SizedBox(width: 7),
                       InkWell(
                         onTap: () {
                           Get.to(Register());
@@ -212,7 +216,7 @@ class _LoginState extends State<Login> {
             ),
           ),
           content: Text(
-            'username atau password salah',
+            'Username atau password salah',
             style: TextStyle(
               fontWeight: FontWeight.bold,
             ),

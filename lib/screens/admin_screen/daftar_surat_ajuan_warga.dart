@@ -33,17 +33,22 @@ class _MenuAjuanSUratState extends State<MenuAjuanSUrat>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 166, 243, 169),
         actions: [
-          IconButton(onPressed: logout, icon: Icon(Icons.login_outlined))
+          IconButton(
+              onPressed: logout,
+              icon: Icon(
+                Icons.login_outlined,
+                color: Colors.black,
+              ))
         ],
         title: Text(
-          'list data ajuan',
+          'Daftar Surat Ajuan Warga',
           style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
+              fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black),
         ),
         bottom: TabBar(
+          labelColor: Colors.black,
           controller: controller,
           tabs: [
             Tab(

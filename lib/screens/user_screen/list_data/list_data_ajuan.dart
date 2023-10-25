@@ -30,14 +30,14 @@ class _ListDataAjuanState extends State<ListDataAjuan>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 166, 243, 169),
         centerTitle: true,
         title: Text(
-          'list data ajuan',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          'Daftar Surat yang Diajukan',
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ),
         bottom: TabBar(
+          labelColor: Colors.black,
           controller: controller,
           tabs: [
             Tab(

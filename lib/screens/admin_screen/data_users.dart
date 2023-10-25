@@ -21,10 +21,12 @@ class _DataUsersState extends State<DataUsers> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 1,
+        backgroundColor: Color.fromARGB(255, 166, 243, 169),
+        centerTitle: true,
         title: const Text(
           'Data User',
           style: TextStyle(
+            color: Colors.black,
             fontSize: 22,
             fontWeight: FontWeight.bold,
           ),
