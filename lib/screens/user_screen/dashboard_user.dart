@@ -6,6 +6,7 @@ import 'package:sikades/screens/user_screen/informasi/informasi_desa.dart';
 import 'package:sikades/screens/user_screen/list_data/list_data_ajuan.dart';
 import 'package:sikades/screens/user_screen/profile/profile.dart';
 import 'package:sikades/screens/user_screen/tambah_data/menu_tambah_data.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 // import '../../utils/colors.dart';
 
@@ -52,8 +53,7 @@ class _DashboardUserState extends State<DashboardUser> {
         bottomNavigationBar: SafeArea(
           child: Container(
             padding: EdgeInsets.all(12),
-            decoration:
-                BoxDecoration(color: Color.fromARGB(255, 166, 243, 169)),
+            decoration: BoxDecoration(color: "#141E46".toColor()),
             child: Row(
               children: [
                 Spacer(),
@@ -67,8 +67,9 @@ class _DashboardUserState extends State<DashboardUser> {
                     },
                     icon: Icon(
                       Icons.home,
-                      color:
-                          _selected_index == 0 ? Colors.blueGrey : Colors.black,
+                      color: _selected_index == 0
+                          ? "#ECF0F1".toColor()
+                          : "#979A9A".toColor(),
                       size: 30,
                     ),
                   ),
@@ -83,8 +84,9 @@ class _DashboardUserState extends State<DashboardUser> {
                     },
                     icon: Icon(
                       Icons.archive,
-                      color:
-                          _selected_index == 1 ? Colors.blueGrey : Colors.black,
+                      color: _selected_index == 1
+                          ? "#ECF0F1".toColor()
+                          : "#979A9A".toColor(),
                       size: 25,
                     ),
                   ),
@@ -131,11 +133,11 @@ class _DashboardUserState extends State<DashboardUser> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-            backgroundColor: Color.fromARGB(255, 133, 233, 136),
+            backgroundColor: "#FF6969".toColor(),
             child: Icon(
               Icons.add,
               size: 35,
-              color: Colors.black,
+              color: Colors.white,
             ),
             onPressed: () {
               Get.to(MenuTambahData());
