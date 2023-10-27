@@ -3,6 +3,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:sikades/screens/user_screen/berita/widget/berita_card.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class Berita extends StatefulWidget {
   const Berita({super.key});
@@ -23,14 +24,16 @@ class _BeritaState extends State<Berita> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 166, 243, 169),
         centerTitle: true,
+        backgroundColor: "#C70039".toColor(),
         title: Text(
           'Berita',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(
+              fontSize: 23, fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
-      body: SizedBox(
+      body: Container(
+        color: "FFF5E0".toColor(),
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: content(),
