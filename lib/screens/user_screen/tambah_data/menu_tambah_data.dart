@@ -59,7 +59,7 @@ class _MenuTambahDataState extends State<MenuTambahData> {
                   height: 10,
                 ),
                 Text(
-                  'Permintaan Surat Pengantar KTP',
+                  'Pengajuan Surat KTP',
                   style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 )
@@ -88,7 +88,7 @@ class _MenuTambahDataState extends State<MenuTambahData> {
                   height: 10,
                 ),
                 Text(
-                  'Permintaan Surat Pengantar KK',
+                  'Pengajuan Surat KK',
                   style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 )
@@ -115,7 +115,7 @@ class _MenuTambahDataState extends State<MenuTambahData> {
                   height: 10,
                 ),
                 Text(
-                  'Permintaan Surat Keterangan Catatan Kepolisian',
+                  'Pengajuan Surat Keterangan Catatan Kepolisian',
                   style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
                   textAlign: TextAlign.center,
                 )

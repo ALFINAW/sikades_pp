@@ -51,21 +51,20 @@ class _LoginState extends State<Login> {
               children: [
                 Container(
                   child: Text(
-                    'Sistem Informasi Kependudukan Desa',
+                    'Sistem Pelayanan Administrasi Desa',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
                   child: Text(
-                    'Kelurahan Kricak, Tegalrejo, Yogyakarta',
+                    'Karangrena, Maos, Cilacap',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Container(
                     margin: EdgeInsets.only(top: 10),
-                    padding: EdgeInsets.only(top: 30),
                     width: 120,
                     height: 180,
                     decoration: BoxDecoration(

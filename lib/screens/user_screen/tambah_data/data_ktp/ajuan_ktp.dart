@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sikades/resources/firestore_method.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class AjuanKtp extends StatefulWidget {
   const AjuanKtp({super.key});
@@ -47,14 +48,16 @@ class _AjuanKtpState extends State<AjuanKtp> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 166, 243, 169),
-        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: "#C70039".toColor(),
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.white),
         title: Text(
-          'Permintaan Surat Pengantar KTP',
-          style: TextStyle(color: Colors.black),
+          'Pengajuan Surat KTP',
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: Container(
+        color: "FFF5E0".toColor(),
         padding: const EdgeInsets.all(16.0),
         child: Center(
             child: Column(
@@ -83,6 +86,8 @@ class _AjuanKtpState extends State<AjuanKtp> {
                           child: TextFormField(
                             controller: namaCon,
                             decoration: InputDecoration(
+                              fillColor: Colors.white,
+                              filled: true,
                               hintText: 'masukan nama anda',
                               labelText: 'Nama',
                               border: OutlineInputBorder(
@@ -110,6 +115,8 @@ class _AjuanKtpState extends State<AjuanKtp> {
                           child: TextFormField(
                             controller: umurCon,
                             decoration: InputDecoration(
+                              fillColor: Colors.white,
+                              filled: true,
                               hintText: 'masukan umur anda',
                               labelText: 'Umur',
                               border: OutlineInputBorder(
@@ -155,7 +162,7 @@ class _AjuanKtpState extends State<AjuanKtp> {
                           controller: upkkCon,
                           decoration: const InputDecoration(
                               filled: true,
-                              fillColor: Colors.transparent,
+                              fillColor: Colors.white,
                               border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5)),
@@ -228,7 +235,7 @@ class _AjuanKtpState extends State<AjuanKtp> {
                           controller: upPasFotoCon,
                           decoration: const InputDecoration(
                               filled: true,
-                              fillColor: Colors.transparent,
+                              fillColor: Colors.white,
                               border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5)),
@@ -301,7 +308,7 @@ class _AjuanKtpState extends State<AjuanKtp> {
                           controller: upTtdCon,
                           decoration: const InputDecoration(
                               filled: true,
-                              fillColor: Colors.transparent,
+                              fillColor: Colors.white,
                               border: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(5)),

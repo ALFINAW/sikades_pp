@@ -94,50 +94,53 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                   Container(
+                      padding: EdgeInsets.only(left: 30),
                       child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'NIK : ' + uNik!,
-                        style: TextStyle(
-                          fontSize: 17,
-                        ),
-                      ),
-                    ],
-                  )),
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            'NIK : ' + uNik!,
+                            style: TextStyle(
+                              fontSize: 17,
+                            ),
+                          ),
+                        ],
+                      )),
                   Container(
+                      padding: EdgeInsets.only(left: 30),
                       child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'Nama : ' + uNama!,
-                        style: TextStyle(
-                          fontSize: 17,
-                        ),
-                      ),
-                    ],
-                  )),
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            'Nama : ' + uNama!,
+                            style: TextStyle(
+                              fontSize: 17,
+                            ),
+                          ),
+                        ],
+                      )),
                   Container(
+                      padding: EdgeInsets.only(left: 30),
                       child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Text(
-                        'Email : ' + uEmail!,
-                        style: TextStyle(
-                          fontSize: 17,
-                        ),
-                      ),
-                    ],
-                  )),
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Text(
+                            'Email : ' + uEmail!,
+                            style: TextStyle(
+                              fontSize: 17,
+                            ),
+                          ),
+                        ],
+                      )),
                   SizedBox(
                     width: 10,
                   ),
