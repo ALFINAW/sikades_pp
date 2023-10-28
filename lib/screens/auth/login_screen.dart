@@ -65,12 +65,13 @@ class _LoginState extends State<Login> {
                 ),
                 Container(
                     margin: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 30),
                     width: 120,
                     height: 180,
                     decoration: BoxDecoration(
                         image: DecorationImage(
                             image: Image.asset(
-                      'assets/images/logo.png',
+                      'assets/images/logokarangrena.png',
                     ).image))),
               ],
             ),
