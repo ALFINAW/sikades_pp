@@ -42,10 +42,13 @@ class _ListDataAjuanState extends State<ListDataAjuan>
           controller: controller,
           tabs: [
             Tab(
-              text: 'KTP',
+              child: Text('KTP'),
             ),
             Tab(
-              text: 'SKCK',
+              child: Text('KK'),
+            ),
+            Tab(
+              child: Text('SKCK'),
             ),
           ],
         ),
@@ -57,7 +60,6 @@ class _ListDataAjuanState extends State<ListDataAjuan>
           const ListSkck(),
         ],
       ),
-      
     );
   }
 }
