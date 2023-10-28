@@ -28,8 +28,7 @@ class _BeritaState extends State<Berita> {
         backgroundColor: "#C70039".toColor(),
         title: Text(
           'Berita',
-          style: TextStyle(
-              fontSize: 23, fontWeight: FontWeight.bold, color: Colors.white),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
       body: Container(
@@ -40,17 +39,6 @@ class _BeritaState extends State<Berita> {
       ),
     );
   }
-
-  // Widget beritaView() {
-  //   return SingleChildScrollView(
-  //     child: Container(
-  //       padding: EdgeInsets.only(left: 20, right: 20, bottom: 5),
-  //       width: MediaQuery.of(context).size.width,
-  //       height: 650,
-  //       child: content(),
-  //     ),
-  //   );
-  // }
 
   Widget content() {
     return StreamBuilder<QuerySnapshot<Object?>>(

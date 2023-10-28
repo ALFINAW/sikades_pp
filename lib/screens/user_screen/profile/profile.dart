@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sikades/screens/auth/login_screen.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -45,14 +46,15 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 166, 243, 169),
+        backgroundColor: "#C70039".toColor(),
         centerTitle: true,
         title: Text(
           'Profil',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
       body: Container(
+        color: "FFF5E0".toColor(),
         padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
         child: Center(
             child: Column(

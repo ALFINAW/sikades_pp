@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:sikades/screens/user_screen/tambah_data/data_ktp/ajuan_ktp.dart';
 import 'package:sikades/screens/user_screen/tambah_data/data_skck/ajuan_skck.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class MenuTambahData extends StatefulWidget {
   const MenuTambahData({super.key});
@@ -16,15 +17,16 @@ class _MenuTambahDataState extends State<MenuTambahData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 166, 243, 169),
-        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: "#C70039".toColor(),
+        iconTheme: IconThemeData(color: Colors.white),
         centerTitle: true,
         title: Text(
           'Pengajuan Surat',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
-      body: SingleChildScrollView(
+      body: Container(
+          color: "FFF5E0".toColor(),
           padding: EdgeInsets.only(top: 20, left: 20, right: 20),
           child: listpengajuansurat()),
     );

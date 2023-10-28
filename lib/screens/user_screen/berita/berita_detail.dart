@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class BeritaDetail extends StatefulWidget {
   final detail;
@@ -13,11 +14,11 @@ class _BeritaDetailState extends State<BeritaDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Color.fromARGB(255, 166, 243, 169),
+          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: "#C70039".toColor(),
           title: const Text(
             'Berita',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
         ),
         body: content());
@@ -25,6 +26,7 @@ class _BeritaDetailState extends State<BeritaDetail> {
 
   Widget content() {
     return Container(
+      color: "FFF5E0".toColor(),
       padding: const EdgeInsets.only(top: 10),
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,

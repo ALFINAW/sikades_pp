@@ -104,8 +104,9 @@ class _DashboardUserState extends State<DashboardUser> {
                     },
                     icon: Icon(
                       Icons.info,
-                      color:
-                          _selected_index == 2 ? Colors.blueGrey : Colors.black,
+                      color: _selected_index == 2
+                          ? "#ECF0F1".toColor()
+                          : "#979A9A".toColor(),
                       size: 25,
                     ),
                   ),
@@ -121,8 +122,9 @@ class _DashboardUserState extends State<DashboardUser> {
                     },
                     icon: Icon(
                       Icons.person,
-                      color:
-                          _selected_index == 3 ? Colors.blueGrey : Colors.black,
+                      color: _selected_index == 3
+                          ? "#ECF0F1".toColor()
+                          : "#979A9A".toColor(),
                       size: 30,
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class InformasiDesa extends StatefulWidget {
   const InformasiDesa({super.key});
@@ -12,14 +13,15 @@ class _InformasiDesaState extends State<InformasiDesa> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 166, 243, 169),
+        backgroundColor: "#C70039".toColor(),
         centerTitle: true,
         title: Text(
           'Informasi Desa',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
       body: Container(
+        color: "FFF5E0".toColor(),
         padding: const EdgeInsets.all(16.0),
         child: Center(
             child: Column(

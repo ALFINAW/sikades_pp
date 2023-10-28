@@ -47,7 +47,7 @@ class _BeritaCardState extends State<BeritaCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 100,
+                      height: 115,
                       width: 100,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
