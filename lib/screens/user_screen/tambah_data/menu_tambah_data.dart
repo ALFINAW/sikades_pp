@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:sikades/screens/user_screen/tambah_data/data_kk/ajuan_kk.dart';
 import 'package:sikades/screens/user_screen/tambah_data/data_ktp/ajuan_ktp.dart';
 import 'package:sikades/screens/user_screen/tambah_data/data_skck/ajuan_skck.dart';
 import 'package:sikades/utils/my_colors.dart';
@@ -73,10 +74,8 @@ class _MenuTambahDataState extends State<MenuTambahData> {
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
               onTap: () {
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: ((context) => FormAjuanKKPage())));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => AjuanKk())));
               },
               child: Column(children: <Widget>[
                 Image(

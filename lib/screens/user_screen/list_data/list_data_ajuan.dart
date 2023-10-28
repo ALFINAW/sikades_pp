@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:sikades/screens/user_screen/list_data/list_ajuan_ktp/list_ktp.dart';
 import 'package:sikades/screens/user_screen/list_data/list_ajuan_skck/list_skck.dart';
+import 'package:sikades/screens/user_screen/list_data/list_data_kk/list_kk.dart';
 import 'package:sikades/utils/my_colors.dart';
 
 class ListDataAjuan extends StatefulWidget {
@@ -18,7 +19,7 @@ class _ListDataAjuanState extends State<ListDataAjuan>
   @override
   void initState() {
     super.initState();
-    controller = TabController(vsync: this, length: 2);
+    controller = TabController(vsync: this, length: 3);
   }
 
   @override
@@ -45,20 +46,17 @@ class _ListDataAjuanState extends State<ListDataAjuan>
               child: Text('KTP'),
             ),
             Tab(
-              child: Text('KK'),
+              child: Text('SKCK'),
             ),
             Tab(
-              child: Text('SKCK'),
+              child: Text('KK'),
             ),
           ],
         ),
       ),
       body: TabBarView(
         controller: controller,
-        children: [
-          const ListKtp(),
-          const ListSkck(),
-        ],
+        children: [const ListKtp(), const ListSkck(), const ListKk()],
       ),
     );
   }
