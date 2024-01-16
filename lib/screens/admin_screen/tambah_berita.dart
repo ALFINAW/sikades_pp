@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sikades/resources/firestore_method.dart';
 import 'package:sikades/screens/admin_screen/dashboard_admin.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class TambahBerita extends StatefulWidget {
   const TambahBerita({super.key});
@@ -38,21 +39,21 @@ class _TambahBeritaState extends State<TambahBerita> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Color.fromARGB(255, 166, 243, 169),
-
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: "#C70039".toColor(),
+        centerTitle: true,
         title: const Text(
           'Tambah Berita',
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
-        // backgroundColor: "#34495E".toColor(),
       ),
-      resizeToAvoidBottomInset: false,
       body: Container(
+        color: "FFF5E0".toColor(),
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.all(15.0),
-        // color: "#212F3C".toColor(),
-
         child: content(),
       ),
     );
@@ -60,29 +61,28 @@ class _TambahBeritaState extends State<TambahBerita> {
 
   Widget content() {
     return Container(
-        padding: EdgeInsets.only(top: 10),
+        padding: EdgeInsets.only(bottom: 250, top: 10),
         child: PhysicalModel(
           color: Colors.white,
           elevation: 3,
           child: Container(
-              padding: EdgeInsets.all(15.0),
+              padding: EdgeInsets.only(left: 15, right: 15),
               width: MediaQuery.of(context).size.width,
-              height: 500,
               child: Form(
                 key: _formKey,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Container(
                       child: TextFormField(
                         controller: judulCon,
                         decoration: InputDecoration(
-                            label: Text('Judul',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                )),
+                            label: Text(
+                              'Judul',
+                            ),
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20))),
+                                borderRadius: BorderRadius.circular(10))),
                         validator: (value) {
                           if (value!.isNotEmpty) {
                             return null;
@@ -99,12 +99,9 @@ class _TambahBeritaState extends State<TambahBerita> {
                         decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
-                            label: Text('Deskripsi',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                )),
+                            label: Text('Deskripsi'),
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20))),
+                                borderRadius: BorderRadius.circular(10))),
                         validator: (value) {
                           if (value!.isEmpty) {
                             return "deskripsi tidak boleh kosong";
@@ -120,16 +117,14 @@ class _TambahBeritaState extends State<TambahBerita> {
                             child: SizedBox(
                           height: 55,
                           child: TextFormField(
-                            enabled: false,
                             readOnly: true,
                             controller: _imageController,
                             decoration: InputDecoration(
                                 hintText: 'foto belum diupload',
-                                hintStyle: TextStyle(fontFamily: 'Poppins'),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                  bottomLeft: Radius.circular(20),
+                                  topLeft: Radius.circular(10),
+                                  bottomLeft: Radius.circular(10),
                                 ))),
                           ),
                         )),
@@ -158,9 +153,7 @@ class _TambahBeritaState extends State<TambahBerita> {
                             icon: Icon(Icons.photo_camera),
                             label: Text(
                               'Upload',
-                              style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontWeight: FontWeight.bold),
+                              style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                           ),
                         ),
@@ -180,9 +173,7 @@ class _TambahBeritaState extends State<TambahBerita> {
                         },
                         child: Text('Tambah',
                             style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold)),
+                                fontSize: 17, fontWeight: FontWeight.bold)),
                       ),
                     )
                   ],
@@ -221,14 +212,12 @@ class _TambahBeritaState extends State<TambahBerita> {
           title: Text(
             'data upload',
             style: TextStyle(
-              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
             ),
           ),
           content: Text(
             'berita berhasil ditambahkan',
             style: TextStyle(
-              fontFamily: 'Poppins',
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -237,7 +226,6 @@ class _TambahBeritaState extends State<TambahBerita> {
               child: Text(
                 'OK',
                 style: TextStyle(
-                  fontFamily: 'Poppins',
                   fontWeight: FontWeight.bold,
                 ),
               ),

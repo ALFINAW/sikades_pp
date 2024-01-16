@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:sikades/screens/user_screen/list_data/list_ajuan_ktp/list_ktp.dart';
 import 'package:sikades/screens/user_screen/list_data/list_ajuan_skck/list_skck.dart';
-import 'package:sikades/screens/user_screen/list_data/list_data_kk/list_kk.dart';
+import 'package:sikades/screens/user_screen/list_data/list_ajuan_kk/list_kk.dart';
 import 'package:sikades/utils/my_colors.dart';
 
 class ListDataAjuan extends StatefulWidget {
@@ -35,7 +35,7 @@ class _ListDataAjuanState extends State<ListDataAjuan>
         backgroundColor: "#C70039".toColor(),
         centerTitle: true,
         title: Text(
-          'Daftar Surat yang Diajukan',
+          'Daftar Surat Ajuan',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         bottom: TabBar(
@@ -46,17 +46,17 @@ class _ListDataAjuanState extends State<ListDataAjuan>
               child: Text('KTP'),
             ),
             Tab(
-              child: Text('SKCK'),
+              child: Text('KK'),
             ),
             Tab(
-              child: Text('KK'),
+              child: Text('SKCK'),
             ),
           ],
         ),
       ),
       body: TabBarView(
         controller: controller,
-        children: [const ListKtp(), const ListSkck(), const ListKk()],
+        children: [const ListKtp(), const ListKk(), const ListSkck()],
       ),
     );
   }

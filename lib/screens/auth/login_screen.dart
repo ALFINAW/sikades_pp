@@ -145,7 +145,7 @@ class _LoginState extends State<Login> {
                           Get.to(Register());
                         },
                         child: Text(
-                          'SignUp',
+                          'Sign Up',
                           style: TextStyle(color: Colors.lightBlue),
                         ),
                       )

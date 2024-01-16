@@ -38,9 +38,20 @@ class _InformasiDesaState extends State<InformasiDesa> {
           Row(
             children: [
               Container(
+                padding: EdgeInsets.only(top: 10),
+                child: Text(
+                  'DESA KARANGRENA',
+                  style: TextStyle(fontSize: 15),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
                 padding: EdgeInsets.only(top: 20),
                 child: Text(
-                  'HUBUNGI KAMI',
+                  'PROFIL',
                   style: TextStyle(fontSize: 15),
                 ),
               ),
@@ -51,7 +62,18 @@ class _InformasiDesaState extends State<InformasiDesa> {
               Container(
                 padding: EdgeInsets.only(top: 10),
                 child: Text(
-                  'KELURAHAN KRICAK',
+                  'Desa kami adalah Desa yang menjunjung tinggi\nkearifan lokal dalam bermasyarakat dan bernegara.',
+                  style: TextStyle(fontSize: 15),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                padding: EdgeInsets.only(top: 20),
+                child: Text(
+                  'HUBUNGI KAMI',
                   style: TextStyle(fontSize: 15),
                 ),
               ),
@@ -64,7 +86,7 @@ class _InformasiDesaState extends State<InformasiDesa> {
             children: [
               Expanded(
                 child: Text(
-                  'Jl. Jatimulya TR I/666 Kelurahan Kricak, Kemantren Tegalrejo\n\n Kota Yogyakarta 55242\n\n Telpon/ Fax : (0274) 548244\n\n Email :kricak@jogjakota.go.id',
+                  'Jl. Rajawali RT/RW 3/2, Karangrena, Kec. Maos, Kabupaten Cilacap, \nJawa Tengah 53272\nTelpon : 0888-6839-006\nEmail :karangrena@gmail.com',
                   style: TextStyle(fontSize: 15),
                 ),
               ),

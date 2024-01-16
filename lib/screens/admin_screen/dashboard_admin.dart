@@ -4,6 +4,7 @@ import 'package:sikades/screens/admin_screen/data_users.dart';
 
 import 'package:sikades/screens/admin_screen/daftar_surat_ajuan_warga.dart';
 import 'package:sikades/screens/admin_screen/tambah_berita.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class DahsboardAdmin extends StatefulWidget {
   const DahsboardAdmin({super.key});
@@ -44,8 +45,7 @@ class _DahsboardAdminState extends State<DahsboardAdmin> {
         bottomNavigationBar: SafeArea(
           child: Container(
             padding: EdgeInsets.all(12),
-            decoration:
-                BoxDecoration(color: Color.fromARGB(255, 166, 243, 169)),
+            decoration: BoxDecoration(color: "#141E46".toColor()),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -59,9 +59,10 @@ class _DahsboardAdminState extends State<DahsboardAdmin> {
                     },
                     icon: Icon(
                       Icons.home,
-                      color:
-                          _selected_index == 0 ? Colors.blueGrey : Colors.black,
-                      size: 30,
+                      color: _selected_index == 0
+                          ? "#ECF0F1".toColor()
+                          : "#979A9A".toColor(),
+                      size: 25,
                     ),
                   ),
                 ),
@@ -74,8 +75,9 @@ class _DahsboardAdminState extends State<DahsboardAdmin> {
                     },
                     icon: Icon(
                       Icons.person,
-                      color:
-                          _selected_index == 1 ? Colors.blueGrey : Colors.black,
+                      color: _selected_index == 1
+                          ? "#ECF0F1".toColor()
+                          : "#979A9A".toColor(),
                       size: 25,
                     ),
                   ),
@@ -89,11 +91,11 @@ class _DahsboardAdminState extends State<DahsboardAdmin> {
           children: pages,
         ),
         floatingActionButton: FloatingActionButton(
-            backgroundColor: Color.fromARGB(255, 133, 233, 136),
+            backgroundColor: "#FF6969".toColor(),
             child: Icon(
               Icons.add,
               size: 35,
-              color: Colors.black,
+              color: Colors.white,
             ),
             onPressed: () {
               Get.to(TambahBerita());

@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class DataKtpDetail extends StatefulWidget {
   final detail;
@@ -14,17 +15,23 @@ class DataKtpDetail extends StatefulWidget {
 }
 
 class _DataKtpDetailState extends State<DataKtpDetail> {
+  final items = ['Belum Disetujui', 'Tidak Disetujui', 'Disetujui'];
+
+  // Nilai yang dipilih
+  String selectedItem = 'Belum Disetujui';
+
   bool isCheked = false;
   // final mq = MediaQueryData.fromWindow(WidgetsBinding.instance.window);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Color.fromARGB(255, 166, 243, 169),
+          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: "#C70039".toColor(),
+          centerTitle: true,
           title: Text(
-            'Detail Formulir Ajuan KTP',
-            style: TextStyle(color: Colors.black),
+            'Data Formulir Ajuan KTP',
+            style: TextStyle(color: Colors.white),
           ),
         ),
         body: SingleChildScrollView(
@@ -33,6 +40,7 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
               height: 1080,
             ),
             child: Container(
+              color: "FFF5E0".toColor(),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               padding: EdgeInsets.only(top: 10, right: 15, left: 15),
@@ -195,12 +203,27 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
               mainAxisSize: MainAxisSize.min,
               // mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                TextFormField(
-                  controller: statusCon,
-                  decoration: InputDecoration(
-                    labelText: 'status',
-                  ),
+                DropdownButtonFormField(
+                  padding: EdgeInsets.only(right: 20),
+                  value: selectedItem,
+                  onChanged: (String? value) {
+                    setState(() {
+                      selectedItem = value!;
+                    });
+                  },
+                  items: items.map((String item) {
+                    return DropdownMenuItem(
+                      child: Text(item),
+                      value: item,
+                    );
+                  }).toList(),
                 ),
+                // TextFormField(
+                //   controller: statusCon,
+                //   decoration: InputDecoration(
+                //     labelText: 'status',
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -274,7 +297,7 @@ class _DataKtpDetailState extends State<DataKtpDetail> {
         .collection('data_ktp')
         .doc(widget.detail['dataid'])
         .update({
-      "status": statusCon.text,
+      "status": selectedItem,
     });
   }
 

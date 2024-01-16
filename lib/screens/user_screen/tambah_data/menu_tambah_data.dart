@@ -35,7 +35,7 @@ class _MenuTambahDataState extends State<MenuTambahData> {
 
   Widget listpengajuansurat() {
     return Container(
-      height: 652,
+      height: MediaQuery.of(context).size.height,
       width: double.infinity,
       child: GridView.count(
         crossAxisCount: 2,

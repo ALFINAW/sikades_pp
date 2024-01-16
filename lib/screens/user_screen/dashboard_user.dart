@@ -70,7 +70,7 @@ class _DashboardUserState extends State<DashboardUser> {
                       color: _selected_index == 0
                           ? "#ECF0F1".toColor()
                           : "#979A9A".toColor(),
-                      size: 30,
+                      size: 25,
                     ),
                   ),
                 ),
@@ -125,7 +125,7 @@ class _DashboardUserState extends State<DashboardUser> {
                       color: _selected_index == 3
                           ? "#ECF0F1".toColor()
                           : "#979A9A".toColor(),
-                      size: 30,
+                      size: 25,
                     ),
                   ),
                 ),

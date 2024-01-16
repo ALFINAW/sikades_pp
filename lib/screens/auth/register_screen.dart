@@ -160,7 +160,7 @@ class _RegisterState extends State<Register> {
                         Navigator.pop(context);
                       },
                       child: Text(
-                        'Login',
+                        'Sign In',
                         style: TextStyle(color: Colors.lightBlue),
                       ),
                     )

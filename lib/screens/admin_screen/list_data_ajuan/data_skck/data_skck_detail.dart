@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+import 'package:sikades/utils/my_colors.dart';
 
 class DataSkckDetail extends StatefulWidget {
   final detail;
@@ -20,11 +21,12 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Color.fromARGB(255, 166, 243, 169),
+          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: "#C70039".toColor(),
+          centerTitle: true,
           title: Text(
             'Detail Formulir Ajuan SKCK',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
         ),
         body: SingleChildScrollView(
@@ -33,6 +35,7 @@ class _DataSkckDetailState extends State<DataSkckDetail> {
               height: 800,
             ),
             child: Container(
+              color: "FFF5E0".toColor(),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               padding: EdgeInsets.only(top: 10, right: 15, left: 15),

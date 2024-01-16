@@ -9,6 +9,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:sikades/resources/firestore_method.dart';
 import 'package:sikades/utils/my_colors.dart';
 
+import '../../dashboard_user.dart';
+
 class AjuanKtp extends StatefulWidget {
   const AjuanKtp({super.key});
 
@@ -366,7 +368,6 @@ class _AjuanKtpState extends State<AjuanKtp> {
                               // addData(namaCon.text, umurCon.text, _img!);
                               addKtp(fileNameKk!, fileNameTtd!, fileNameFace!,
                                   _imgFace!, _imgTtd!, _imgKk!);
-                              Get.back();
                             }
                           },
                           child: Container(
@@ -413,6 +414,42 @@ class _AjuanKtpState extends State<AjuanKtp> {
       imgUrlFace = await imgUploadFace.getDownloadURL();
       await FirestoreMethod().tambahDataKtp(
           namaCon.text, umurCon.text, imgUrlFace, imgUrlKk, imgUrlTtd);
+      showAddDataSuccessDialog();
     } catch (e) {}
+  }
+
+  void showAddDataSuccessDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'data upload',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          content: Text(
+            'ajuan berhasil ditambahkan',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          actions: <Widget>[
+            ElevatedButton(
+              child: Text(
+                'OK',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onPressed: () {
+                Get.offAll(DashboardUser());
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 }
